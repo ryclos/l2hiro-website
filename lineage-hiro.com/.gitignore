@@ -1,4 +1,4 @@
-./client
-./update
-./news
-./launcher
+client/*
+update/*
+news/*
+launcher/*

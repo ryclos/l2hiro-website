@@ -40,21 +40,9 @@
 		<div class="container">
 			<div class="header-left">
 				<?php
-				error_reporting(0);
-				include 'includes/config.php';
-
-				$mysqli = new mysqli($server_host, $db_user_name, $db_user_password, $db_database);
-				if (mysqli_connect_errno()) {
-					echo "Failed to connect to MySQL: " . mysqli_connect_error();
-					exit();
-				}
-
-				$sql = "SELECT count(*) FROM characters WHERE online =1;";
-				$result = $mysqli->query($sql);
-				$row = $result->fetch_row();
-				print "<h6>" . "Online Players : " . $row[0] . "<h6>";
-				$result->free_result();
-				$mysqli->close();
+				include_once 'includes/services/playersConnected.php';
+				echo "<br>";
+				include_once 'includes/services/statsPlayerPvP.php';
 				?>
 			</div>
 			<div class="header-right">
@@ -62,8 +50,8 @@
 					<a href="index.php">MAIN</a>
 					<a href="dashboard.php">DASHBOARD</a>
 					<a href="https://discord.gg/kMBJkcXyab" target="_blank">DISCORD</a>
-					<!-- <a href="#">DONATE</a>
-					<a href="<?php echo $forum; ?>">FORUM</a> -->
+					<!-- <a href="#">DONATE</a> -->
+					<a href="<?php echo $forum; ?>" target="_blank">FORUM</a>
 				</div>
 				<img src="images/logo.png" width="75%">
 
@@ -84,11 +72,19 @@
 			</div>
 		</div>
 	</header>
-
-	<a href="https://l2topzone.com/vote/id/18373" target="_blank" title="l2topzone"><img src="https://l2topzone.com/vb/l2topzone-Lineage2-vote-banner-bottom-left-3.gif" style="position: fixed; z-index:99999; bottom: 4.3rem; left: 0;" alt="l2topzone.com" border="0"></a>
-	<div class="footer">
-		<a href="http://l2jmobius.org"><img alt="" src="images/l2jmobius.png" title=""></a>
+	<!-- BANNIERE -->
+	<a href="https://l2network.eu/index.php?a=in&u=hybrid" target="_blank">
+		<img src="https://l2network.eu/images/sidebanner.png" alt="L2Network" style="display:block;width:145px;height:122px;position:fixed;bottom:12rem;right:0;z-index:999;" alt="L2Network" />
+	</a>
+	<a href="https://l2topzone.com/vote/id/18373" target="_blank" title="l2topzone">
+		<img src="https://l2topzone.com/vb/l2topzone-Lineage2-vote-banner-bottom-left-3.gif" style="position: fixed; z-index:99999; bottom: 4.3rem; left: 0;" alt="l2topzone.com" border="0">
+	</a>
+	<div style='position: fixed; z-index:99999; bottom: 4.0rem; right: 0;'>
+		<a href="https://la2.mmotop.ru/fr/servers/36567/votes/new" target="_blank">
+			<img src="images/mmo_36567.png" border="0" id="mmotopratingimg" alt="lien de vote mmotop">
+		</a>
 	</div>
+	<!-- BANNIERE -->
 	<script>
 		var url = 'download.php';
 	</script>

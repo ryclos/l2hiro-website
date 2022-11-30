@@ -8,10 +8,10 @@ session_start();
 	$db_database		= 'l2game';
 	
 	//Link for Site - http:// or https:// on front
-	$siteURL = 'http://l2hiro.com';
+	$siteURL = 'https://l2hiro.com';
 	
 	//Link for Forum - http:// or https:// on front
-	$forum = 'http://127.0.0.1/forum';
+	$forum = 'https://lineage2hiroforum.forumactif.com/ ';
 	
 	//Link for Client Download
 	$dlClient = 'client/ClientL2.zip';
